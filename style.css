@@ -1,0 +1,244 @@
+/* 全局样式 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f4f4f4;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* 导航栏 */
+header {
+    background: #333;
+    color: #fff;
+    padding: 1rem 0;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo h1 {
+    font-size: 1.5rem;
+}
+
+.logo a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.nav-links li {
+    margin-left: 20px;
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #4CAF50;
+}
+
+/* 英雄区域 */
+.hero {
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=minimalist%20blog%20header%20background&image_size=landscape_16_9');
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    padding: 4rem 0;
+    text-align: center;
+}
+
+.hero h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    font-size: 1.2rem;
+}
+
+/* 文章列表 */
+.posts {
+    padding: 2rem 0;
+}
+
+.posts h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.post-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.post-card {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    padding: 20px;
+    transition: transform 0.3s;
+}
+
+.post-card:hover {
+    transform: translateY(-5px);
+}
+
+.post-card h4 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.post-card h4 a {
+    color: #333;
+    text-decoration: none;
+}
+
+.post-card h4 a:hover {
+    color: #4CAF50;
+}
+
+.post-meta {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.post-excerpt {
+    margin-bottom: 15px;
+}
+
+.read-more {
+    display: inline-block;
+    background: #4CAF50;
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: background 0.3s;
+}
+
+.read-more:hover {
+    background: #45a049;
+}
+
+/* 关于和联系部分 */
+.about, .contact {
+    padding: 3rem 0;
+    background: #fff;
+    margin: 2rem 0;
+}
+
+.about h3, .contact h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+/* 文章详情页 */
+.post-detail {
+    padding: 2rem 0;
+    background: #fff;
+}
+
+.post-detail h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.post-detail .post-meta {
+    margin-bottom: 2rem;
+}
+
+.post-content {
+    line-height: 1.8;
+}
+
+.post-content p {
+    margin-bottom: 1.5rem;
+}
+
+/* 页脚 */
+footer {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1.5rem 0;
+    margin-top: 2rem;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .nav-links {
+        flex-direction: column;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        background: #333;
+        width: 100%;
+        padding: 20px;
+        display: none;
+    }
+
+    .nav-links li {
+        margin: 10px 0;
+    }
+
+    .hero h2 {
+        font-size: 2rem;
+    }
+
+    .post-list {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* 搜索框样式 */
+.search-container {
+    margin: 2rem 0;
+    text-align: center;
+}
+
+.search-input {
+    padding: 10px;
+    width: 300px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.search-button {
+    padding: 10px 20px;
+    background: #4CAF50;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.search-button:hover {
+    background: #45a049;
+}
