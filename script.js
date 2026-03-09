@@ -6,8 +6,7 @@ const posts = [
         content: '学习编程是一个循序渐进的过程，首先需要选择一门适合的编程语言，然后通过实践项目来巩固知识。本文将分享我的学习经验和建议，帮助你更快地入门编程世界。',
         excerpt: '学习编程的入门指南和实践建议',
         date: '2026-03-01',
-        category: '编程',
-        image: 'images/142030466_p0.jpg'
+        category: '编程'
     },
     {
         id: 2,
@@ -15,8 +14,7 @@ const posts = [
         content: '现代前端开发涉及多种工具和技术，包括构建工具、包管理器、版本控制等。本文将介绍常用的前端开发工具链，帮助你提高开发效率。',
         excerpt: '探索现代前端开发的工具和技术',
         date: '2026-02-25',
-        category: '前端',
-        image: 'images/142030466_p0.jpg'
+        category: '前端'
     },
     {
         id: 3,
@@ -24,8 +22,7 @@ const posts = [
         content: '数据结构和算法是计算机科学的基础，掌握它们对于解决复杂问题至关重要。本文将介绍常见的数据结构和算法，以及它们的应用场景。',
         excerpt: '数据结构与算法的核心概念和应用',
         date: '2026-02-20',
-        category: '算法',
-        image: 'images/142030466_p0.jpg'
+        category: '算法'
     },
     {
         id: 4,
@@ -33,8 +30,7 @@ const posts = [
         content: '人工智能技术正在快速发展，从机器学习到深度学习，从自然语言处理到计算机视觉。本文将探讨AI的最新发展趋势和未来可能的应用场景。',
         excerpt: '人工智能技术的最新发展和应用前景',
         date: '2026-02-15',
-        category: '人工智能',
-        image: 'images/142030466_p0.jpg'
+        category: '人工智能'
     },
     {
         id: 5,
@@ -42,8 +38,7 @@ const posts = [
         content: '保持健康的生活方式对于工作和学习都非常重要。本文将分享一些健康生活的建议，包括饮食、运动、睡眠等方面的注意事项。',
         excerpt: '如何建立健康的生活习惯',
         date: '2026-02-10',
-        category: '生活',
-        image: 'images/142030466_p0.jpg'
+        category: '生活'
     },
     {
         id: 6,
@@ -51,8 +46,7 @@ const posts = [
         content: '旅行摄影是记录美好回忆的重要方式。本文将分享一些旅行摄影的技巧和建议，帮助你拍出更好的旅行照片。',
         excerpt: '旅行摄影的实用技巧和构图方法',
         date: '2026-02-05',
-        category: '摄影',
-        image: 'images/142030466_p0.jpg'
+        category: '摄影'
     }
 ];
 
@@ -70,13 +64,10 @@ function renderPosts(postsToRender) {
         const postCard = document.createElement('div');
         postCard.className = 'post-card';
         postCard.innerHTML = `
-            <img src="${post.image}" alt="${post.title}" class="post-card-image">
-            <div class="post-card-content">
-                <h4><a href="post.html?id=${post.id}">${post.title}</a></h4>
-                <div class="post-meta">${post.date} | ${post.category}</div>
-                <div class="post-excerpt">${post.excerpt}</div>
-                <a href="post.html?id=${post.id}" class="read-more">阅读更多</a>
-            </div>
+            <h4><a href="post.html?id=${post.id}">${post.title}</a></h4>
+            <div class="post-meta">${post.date} | ${post.category}</div>
+            <div class="post-excerpt">${post.excerpt}</div>
+            <a href="post.html?id=${post.id}" class="read-more">阅读更多</a>
         `;
         postList.appendChild(postCard);
     });
@@ -140,7 +131,6 @@ function initPostDetail() {
         const postDetailContainer = document.getElementById('post-detail');
         if (postDetailContainer) {
             postDetailContainer.innerHTML = `
-                <img src="${post.image}" alt="${post.title}" class="post-featured-image">
                 <h2>${post.title}</h2>
                 <div class="post-meta">${post.date} | ${post.category}</div>
                 <div class="post-content">
