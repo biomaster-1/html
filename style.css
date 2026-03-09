@@ -99,13 +99,18 @@ nav {
     font-size: 3rem;
     margin-bottom: 1rem;
     text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-    animation: floatText 3s ease-in-out infinite;
+    font-family: 'Press Start 2P', cursive;
+    letter-spacing: 2px;
+    image-rendering: pixelated;
+    text-transform: uppercase;
 }
 
 .hero p {
     font-size: 1.3rem;
     text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
-    animation: floatText 3s ease-in-out infinite 0.5s;
+    font-family: 'Press Start 2P', cursive;
+    letter-spacing: 1px;
+    image-rendering: pixelated;
 }
 
 /* 浮动动画 */
@@ -136,6 +141,43 @@ nav {
         opacity: 1;
         transform: translateY(0);
     }
+}
+
+/* 像素化闪烁效果 */
+@keyframes pixelFlicker {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.8;
+    }
+}
+
+/* 扫描线效果 */
+.hero::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: repeating-linear-gradient(
+        0deg,
+        rgba(0, 0, 0, 0.15),
+        rgba(0, 0, 0, 0.15) 1px,
+        transparent 1px,
+        transparent 2px
+    );
+    pointer-events: none;
+    z-index: 2;
+}
+
+.hero h2 {
+    animation: floatText 3s ease-in-out infinite, pixelFlicker 0.1s infinite;
+}
+
+.hero p {
+    animation: floatText 3s ease-in-out infinite 0.5s, pixelFlicker 0.15s infinite;
 }
 
 /* 文章列表 */
@@ -273,11 +315,13 @@ footer {
     }
 
     .hero h2 {
-        font-size: 2rem;
+        font-size: 1.5rem;
+        letter-spacing: 1px;
     }
 
     .hero p {
-        font-size: 1rem;
+        font-size: 0.8rem;
+        letter-spacing: 0.5px;
     }
 
     .post-list {
